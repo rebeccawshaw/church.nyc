@@ -1,13 +1,15 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "church.nyc site",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Church of the City New York Sample Site",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Rebecca Shaw, Jonathan Girma, Peter Weon",
   "dependencies": {
     "gatsby": "^4.22.0",
     "gatsby-plugin-image": "^2.22.0",
     "gatsby-plugin-manifest": "^4.22.0",
+    "gatsby-plugin-netlify": "^5.0.1",
+    "gatsby-plugin-netlify-cms": "^6.22.0",
     "gatsby-plugin-sharp": "^4.22.0",
     "gatsby-source-filesystem": "^4.22.0",
     "gatsby-transformer-sharp": "^4.22.0",
@@ -33,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/rebeccawshaw/church.nyc"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
