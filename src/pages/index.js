@@ -2,11 +2,13 @@ import * as React from "react"
 import { Link } from "gatsby"
 
 import Seo from "../components/seo"
+import { graphql } from 'gatsby'
 import LoginButton from "../components/login-button";
 import Layout from '../components/layout'
+import InstagramSection from "../components/instagramSection";
 
 
-const IndexPage = () => {
+const IndexPage = ( {data} ) => {
 return (
     <Layout>
       <Seo title="Home" />
@@ -23,6 +25,10 @@ return (
           <LoginButton />
           <Link to="/account">Planning Center account</Link>
         </div>
+        <div>
+          <InstagramSection />
+          {data.allInstaNode.edges.map((item, index) => <img alt={`instagram pic ${index}`} src={item.node.localFile.childImageSharp.fixed.src} />)}
+        </div>
       </div>
     </Layout>
   )
@@ -36,3 +42,39 @@ return (
 export const Head = () => <Seo title="Home" />
 
 export default IndexPage
+
+export const query = graphql`
+query InstagramQuery {
+    allInstaNode {
+      edges {
+        node {
+          id
+          likes
+          comments
+          mediaType
+          preview
+          original
+          timestamp
+          caption
+          localFile {
+            childImageSharp {
+              fixed(width: 150, height: 150) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          },
+          # Only available with the public api scraper
+          thumbnails {
+            src
+            config_width
+            config_height
+          }
+          dimensions {
+            height
+            width
+          }
+        }
+      }
+    }
+}
+`

@@ -30,6 +30,12 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `4531073513`
+      }
+    },
     `gatsby-plugin-styled-components`
   ],
 }
