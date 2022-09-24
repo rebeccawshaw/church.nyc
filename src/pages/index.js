@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import LoginButton from "../components/login-button";
 import Layout from '../components/layout'
 import InstagramSection from "../components/instagramSection";
+import Gallery from '../components/slider';
 
 
 const IndexPage = ( {data} ) => {
@@ -26,6 +27,9 @@ return (
           <Link to="/account">Planning Center account</Link>
           <Link to="/calendar">Planning Center account</Link>
         </div>
+        <div>    
+          <Gallery />
+        </div>   
         <div>
           <InstagramSection />
           {data.allInstaNode.edges.map((item, index) => <img alt={`instagram pic ${index}`} src={item.node.localFile.childImageSharp.fixed.src} />)}

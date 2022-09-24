@@ -33,31 +33,16 @@ module.exports = {
         apiKey: process.env.CLOUDINARY_API_KEY,
         apiSecret: process.env.CLOUDINARY_API_SECRET,
         resourceType: `image`,
-        prefix: `home-page/`
+        prefix: `home-page/`,
+        context: true,
+        tags: true,
+        maxResults: 20
       }
     },
     {
       resolve: `gatsby-source-instagram`,
       options: {
         username: `4531073513`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: 'gatsby-transformer-cloudinary',
-      options: {
-        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-        apiKey: process.env.CLOUDINARY_API_KEY,
-        apiSecret: process.env.CLOUDINARY_API_SECRET,
-
-        // This folder will be created if it doesn’t exist.
-        uploadFolder: 'gatsby-cloudinary',
       }
     },
     `gatsby-transformer-sharp`,
