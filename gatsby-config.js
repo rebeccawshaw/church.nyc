@@ -10,16 +10,6 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
-    `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -32,7 +22,22 @@ module.exports = {
         // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
+      }
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-source-cloudinary`,
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`,
+        prefix: `home-page/`,
+        context: true,
+        tags: true,
+        maxResults: 20
+      }
     },
     {
       resolve: `gatsby-source-instagram`,
@@ -40,6 +45,6 @@ module.exports = {
         username: `4531073513`
       }
     },
-    `gatsby-plugin-styled-components`
+    `gatsby-transformer-sharp`,
   ],
 }
