@@ -11,26 +11,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-cloudinary`,
-      options: {
-        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-        apiKey: process.env.CLOUDINARY_API_KEY,
-        apiSecret: process.env.CLOUDINARY_API_SECRET,
-        resourceType: `image`,
-        prefix: `gatsby-source-cloudinary/`
-      }
-    },
-    `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -42,7 +22,19 @@ module.exports = {
         // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
+      }
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-source-cloudinary`,
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`,
+        prefix: `home-page/`
+      }
     },
     {
       resolve: `gatsby-source-instagram`,
@@ -50,6 +42,24 @@ module.exports = {
         username: `4531073513`
       }
     },
-    `gatsby-plugin-styled-components`
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-cloudinary',
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+
+        // This folder will be created if it doesn’t exist.
+        uploadFolder: 'gatsby-cloudinary',
+      }
+    },
+    `gatsby-transformer-sharp`,
   ],
 }
