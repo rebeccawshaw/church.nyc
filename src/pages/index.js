@@ -24,6 +24,7 @@ return (
           <p>Church of the City New York</p>
           <LoginButton />
           <Link to="/account">Planning Center account</Link>
+          <Link to="/calendar">Planning Center account</Link>
         </div>
         <div>
           <InstagramSection />
