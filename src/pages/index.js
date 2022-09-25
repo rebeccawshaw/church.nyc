@@ -6,8 +6,6 @@ import { graphql } from 'gatsby'
 import LoginButton from "../components/login-button";
 import Layout from '../components/layout'
 import InstagramSection from "../components/instagramSection";
-import Gallery from '../components/slider';
-
 
 const IndexPage = ( {data} ) => {
 return (
