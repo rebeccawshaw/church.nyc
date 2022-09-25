@@ -28,11 +28,19 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/static/sermons`,
+      },
+    },
+    {
       resolve: `gatsby-source-instagram`,
       options: {
         username: `4531073513`
       }
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
   ],
 }
