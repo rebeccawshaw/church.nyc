@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Seo from "../components/common/seo"
-import LoginButton from "../components/login-button";
 import Layout from '../components/layout'
 import InstagramSection from "../components/index/instagramSection";
 import Banner from "../components/index/banner";
