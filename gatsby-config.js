@@ -30,7 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
+        name: `sermons`,
         path: `${__dirname}/static/sermons`,
       },
     },
