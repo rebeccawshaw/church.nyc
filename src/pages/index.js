@@ -27,9 +27,6 @@ return (
           <Link to="/account">Planning Center account</Link>
           <Link to="/calendar">Calendar</Link>
         </div>
-        <div>    
-          <Gallery />
-        </div>   
         <div>
           <InstagramSection />
           {data.allInstaNode.edges.map((item, index) => <img alt={`instagram pic ${index}`} src={item.node.localFile.childImageSharp.fixed.src} />)}

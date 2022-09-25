@@ -28,19 +28,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-source-cloudinary`,
-      options: {
-        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-        apiKey: process.env.CLOUDINARY_API_KEY,
-        apiSecret: process.env.CLOUDINARY_API_SECRET,
-        resourceType: `image`,
-        prefix: `home-page/`,
-        context: true,
-        tags: true,
-        maxResults: 20
-      }
-    },
-    {
       resolve: `gatsby-source-instagram`,
       options: {
         username: `4531073513`

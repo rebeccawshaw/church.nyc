@@ -3,7 +3,7 @@ backend:
   repo: rebeccawshaw/church.ny
   branch: netlify-cms
 
-media_folder: static/assets
+media_folder: static/media
 
 collections:
   - name: blog
