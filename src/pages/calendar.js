@@ -1,7 +1,7 @@
 // src/pages/calendar.js
 import React from "react";
 
-import Seo from "../components/seo"
+import Seo from "../components/common/seo"
 import Layout from '../components/layout'
 
 // const events = () => {
