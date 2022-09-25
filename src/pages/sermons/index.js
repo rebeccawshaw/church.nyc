@@ -8,9 +8,9 @@ export default function SermonsPage(props) {
     <Layout>
         <ul>
         {props.data.allMarkdownRemark.nodes.map(markdownRemark => (
-            <li key={markdownRemark.series}>
+            <li key={markdownRemark.frontmatter.series}>
                 {console.log(markdownRemark)}
-            <Link to={markdownRemark.sermonPath}>path: {markdownRemark.sermonPath}!</Link>
+                {markdownRemark.frontmatter.series}: {markdownRemark.frontmatter.title} (<Link to={markdownRemark.sermonPath}>{markdownRemark.sermonPath}</Link>)
             </li>
         ))}
         </ul>
