@@ -6,7 +6,7 @@ const getServices = async (req, res) => {
 
     const headers = {
         "Content-Type": "application/json",
-        'Authorization': 'Basic ' + btoa('6ac4412f58f62749e2c3fa6e03b991a19405d11d83fe7bdfc6c2dcf672618afe:a5997abf9be74effe9b934b5c58a482fe29ca3c106f70a956f8175464e366b65')
+        'Authorization': 'Basic ' + btoa(process.env.PLANNING_CENTER_APP_ID + ":" + process.env.PLANNING_CENTER_SECRET)
     }
 
     try {

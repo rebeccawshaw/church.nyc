@@ -24,20 +24,15 @@ module.exports = {
         icon: `src/images/logo.png`, // This path is relative to the root of the site.
       }
     },
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-source-cloudinary`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-        apiKey: process.env.CLOUDINARY_API_KEY,
-        apiSecret: process.env.CLOUDINARY_API_SECRET,
-        resourceType: `image`,
-        prefix: `home-page/`,
-        context: true,
-        tags: true,
-        maxResults: 20
-      }
+        name: `sermons`,
+        path: `${__dirname}/static/sermons`,
+      },
     },
     {
       resolve: `gatsby-source-instagram`,
@@ -45,6 +40,7 @@ module.exports = {
         username: `4531073513`
       }
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
   ],
 }
