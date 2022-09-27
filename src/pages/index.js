@@ -20,9 +20,6 @@ return (
       <UpcomingEvents />
       <GetConnected />
       <InstagramSection />
-          {/* <LoginButton />
-          <Link to="/account">Planning Center account</Link>
-          <Link to="/calendar">Calendar</Link> */}
     </Layout>
   )
 }
