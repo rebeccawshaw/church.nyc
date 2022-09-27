@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby'
 
 export default function SermonTemplate({
   data,
@@ -19,8 +20,8 @@ export default function SermonTemplate({
   );
 }
 
-export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+export const pageQuery = useStaticQuery(graphql`
+  query SermonPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
@@ -29,5 +30,5 @@ export const pageQuery = graphql`
         title
       }
     }
-  }
-`;
+  }`
+  );
