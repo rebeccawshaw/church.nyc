@@ -1,10 +1,19 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-export default function sermonTemplate({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+const sermonTemplate = () => {
+  const data = graphql`
+    query($id: String!) {
+      markdownRemark(id: { eq: $id }) {
+        html
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+        }
+      }
+    }
+  `
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
     <div className="sermons-container">
@@ -20,14 +29,4 @@ export default function sermonTemplate({
   )
 }
 
-export const pageQuery = graphql`
-  query($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        title
-      }
-    }
-  }
-`
+export default sermonTemplate
